@@ -1,0 +1,54 @@
+.root {
+    -fx-background-color: #a4adba;
+}
+
+.button{
+    -fx-background-color: #5c789c;
+    -fx-pref-height: 40px;
+}
+
+.text {
+    -fx-text-fill: #000;
+}
+
+.bogota {
+    -fx-fill: #8B4513;
+    -fx-stroke: black;
+    -fx-stroke-width: 3;
+}
+
+.funza {
+    -fx-fill: #FFB6C1;
+    -fx-stroke: black;
+    -fx-stroke-width: 3;
+}
+
+.medellin {
+    -fx-fill: #FFD700;
+    -fx-stroke: black;
+    -fx-stroke-width: 3;
+}
+
+.cali {
+    -fx-fill: #66CCCC;
+    -fx-stroke: black;
+    -fx-stroke-width: 3;
+}
+
+.tunja {
+    -fx-fill: #C0C0FF;
+    -fx-stroke: black;
+    -fx-stroke-width: 3;
+}
+
+.villao {
+    -fx-fill: #CCFF33;
+    -fx-stroke: black;
+    -fx-stroke-width: 3;
+}
+
+.pereira {
+    -fx-fill: #D3D3D3;
+    -fx-stroke: black;
+    -fx-stroke-width: 3;
+}
