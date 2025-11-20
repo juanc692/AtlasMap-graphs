@@ -1,4 +1,4 @@
-package Grafos;
+package Grafos.codigo;
 
 import java.util.HashMap;
 import java.util.LinkedList;

@@ -11,6 +11,6 @@ module examplepack.grafos {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens examplepack.grafos to javafx.fxml;
-    exports examplepack.grafos;
+    opens Grafos to javafx.fxml;
+    exports Grafos;
 }
