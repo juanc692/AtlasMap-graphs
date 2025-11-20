@@ -12,28 +12,28 @@
 
     <!-- ======== ARISTAS ======== -->
     <Line fx:id="pereira_bogota_line" endX="250" endY="80" startX="135.4609375" startY="168.03125" stroke="blue" strokeWidth="3" />
-    <Text fx:id="pereira_bogota" layoutX="156.0" layoutY="113.0" text="30km" />
+    <Text fx:id="pereira_bogota" layoutX="125.0" layoutY="104.0" text="30km - Peaje: 2" />
 
     <Line fx:id="bogota_funza_line" endX="169.0" endY="351.0" startX="135.0" startY="169.0" stroke="blue" strokeWidth="3" />
-    <Text fx:id="bogota_funza" layoutX="118.0" layoutY="261.0" text="40km" />
+    <Text fx:id="bogota_funza" layoutX="109.0" layoutY="261.0" text="40km - Peaje: 1" wrappingWidth="50.0" />
 
     <Line fx:id="funza_medellin_line" endX="272.121337890625" endY="253.5" startX="168.0" startY="350.0" stroke="blue" strokeWidth="3" />
-    <Text fx:id="funza_medellin" layoutX="193.0" layoutY="285.0" text="20km" />
+    <Text fx:id="funza_medellin" layoutX="178.0" layoutY="273.0" text="20km - Peaje: 0" wrappingWidth="50.0" />
 
     <Line fx:id="medellin_cali_line" endX="470" endY="220" startX="270.0" startY="254.0" stroke="blue" strokeWidth="3" />
-    <Text fx:id="medellin_cali" layoutX="370.0" layoutY="227.0" text="50km" />
+    <Text fx:id="medellin_cali" layoutX="351.0" layoutY="222.0" text="50km - Peaje: 1" />
 
     <Line fx:id="cali_tunja_line" endX="520" endY="100" startX="470" startY="220" stroke="blue" strokeWidth="3" />
-    <Text fx:id="cali_tunja" layoutX="505.0" layoutY="174.0" text="10km" />
+    <Text fx:id="cali_tunja" layoutX="505.0" layoutY="174.0" text="10km - Peaje: 0" />
 
     <Line fx:id="villao_cali_line" endX="400" endY="340" startX="470" startY="220" stroke="blue" strokeWidth="3" />
-    <Text fx:id="villao_cali" layoutX="445.0" layoutY="290.0" text="20km" />
+    <Text fx:id="villao_cali" layoutX="445.0" layoutY="290.0" text="20km - Peaje: 1" />
 
     <Line fx:id="funza_villao_line" endX="400" endY="340" startX="168.0" startY="350.0" stroke="blue" strokeWidth="3" />
-    <Text fx:id="funza_villao" layoutX="260.0" layoutY="339.0" text="40km" />
+    <Text fx:id="funza_villao" layoutX="260.0" layoutY="339.0" text="40km - Peaje: 1" />
 
     <Line fx:id="pereira_villao_line" endX="400.0" endY="338.0" startX="250" startY="80" stroke="blue" strokeWidth="3" />
-    <Text fx:id="pereira_villao" layoutX="307.0" layoutY="171.0" text="100km" />
+    <Text fx:id="pereira_villao" layoutX="307.0" layoutY="171.0" text="100km - Peaje: 3" />
 
     <!-- ======== CIUDADES (NODOS) ======== -->
 

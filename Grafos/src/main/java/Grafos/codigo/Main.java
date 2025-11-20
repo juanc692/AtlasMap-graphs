@@ -89,6 +89,7 @@ public class Main {
         node7.addDestination(node6, 30, 2);
         node7.addDestination(node1, 40, 1);
 
+
         Graph graph = new Graph();
         graph.addNode(node1);
         graph.addNode(node2);

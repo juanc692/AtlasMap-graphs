@@ -198,6 +198,7 @@ public class grafos_controlador {
         for(Map.Entry<Text,Line> l : lineas.entrySet())
         {
             l.getValue().setStroke(Color.BLUE);
+            l.getKey().setVisible(false);
         }
 
         for (String arista : aristas) {
@@ -211,6 +212,7 @@ public class grafos_controlador {
 
                 if (setKey.equals(setRuta)) {
                     linea.getValue().setStroke(Color.GREEN);
+                    linea.getKey().setVisible(true);
                 } else {
 //                    linea.getValue().setStroke(Color.BLUE);
                 }
