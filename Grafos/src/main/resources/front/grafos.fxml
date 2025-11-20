@@ -12,28 +12,28 @@
 
     <!-- ======== ARISTAS ======== -->
     <Line fx:id="pereira_bogota_line" endX="250" endY="80" startX="135.4609375" startY="168.03125" stroke="blue" strokeWidth="3" />
-    <Text fx:id="pereira_bogota" layoutX="125.0" layoutY="104.0" text="30km - Peaje: 2" />
+    <Text fx:id="pereira_bogota" layoutX="143.0" layoutY="105.0" text="30km " />
 
     <Line fx:id="bogota_funza_line" endX="169.0" endY="351.0" startX="135.0" startY="169.0" stroke="blue" strokeWidth="3" />
-    <Text fx:id="bogota_funza" layoutX="109.0" layoutY="261.0" text="40km - Peaje: 1" wrappingWidth="50.0" />
+    <Text fx:id="bogota_funza" layoutX="109.0" layoutY="261.0" text="40km " wrappingWidth="50.0" />
 
     <Line fx:id="funza_medellin_line" endX="272.121337890625" endY="253.5" startX="168.0" startY="350.0" stroke="blue" strokeWidth="3" />
-    <Text fx:id="funza_medellin" layoutX="178.0" layoutY="273.0" text="20km - Peaje: 0" wrappingWidth="50.0" />
+    <Text fx:id="funza_medellin" layoutX="187.0" layoutY="270.0" text="20km " />
 
     <Line fx:id="medellin_cali_line" endX="470" endY="220" startX="270.0" startY="254.0" stroke="blue" strokeWidth="3" />
-    <Text fx:id="medellin_cali" layoutX="351.0" layoutY="222.0" text="50km - Peaje: 1" />
+    <Text fx:id="medellin_cali" layoutX="351.0" layoutY="222.0" text="50km " />
 
     <Line fx:id="cali_tunja_line" endX="520" endY="100" startX="470" startY="220" stroke="blue" strokeWidth="3" />
-    <Text fx:id="cali_tunja" layoutX="505.0" layoutY="174.0" text="10km - Peaje: 0" />
+    <Text fx:id="cali_tunja" layoutX="512.0" layoutY="169.0" text="10km " />
 
     <Line fx:id="villao_cali_line" endX="400" endY="340" startX="470" startY="220" stroke="blue" strokeWidth="3" />
-    <Text fx:id="villao_cali" layoutX="445.0" layoutY="290.0" text="20km - Peaje: 1" />
+    <Text fx:id="villao_cali" layoutX="445.0" layoutY="290.0" text="20km " />
 
     <Line fx:id="funza_villao_line" endX="400" endY="340" startX="168.0" startY="350.0" stroke="blue" strokeWidth="3" />
-    <Text fx:id="funza_villao" layoutX="260.0" layoutY="339.0" text="40km - Peaje: 1" />
+    <Text fx:id="funza_villao" layoutX="260.0" layoutY="339.0" text="40km " />
 
     <Line fx:id="pereira_villao_line" endX="400.0" endY="338.0" startX="250" startY="80" stroke="blue" strokeWidth="3" />
-    <Text fx:id="pereira_villao" layoutX="307.0" layoutY="171.0" text="100km - Peaje: 3" />
+    <Text fx:id="pereira_villao" layoutX="307.0" layoutY="171.0" text="100km " />
 
     <!-- ======== CIUDADES (NODOS) ======== -->
 
@@ -84,5 +84,14 @@
     <Button fx:id="btnPeajes" layoutX="700" layoutY="220" prefWidth="150" text="Peajes" textFill="WHITE" />
     <Button fx:id="btnRuta" layoutX="700" layoutY="350" prefWidth="150" text="Calcular ruta" textFill="WHITE" />
    <Label fx:id="labelCostoTotal" layoutX="700.0" layoutY="44.0" text="Costo:" />
+   <Text fx:id="pereira_bogota1" layoutX="137.0" layoutY="128.0" text="Peaje: 2" />
+   <Text fx:id="bogota_funza1" layoutX="108.0" layoutY="282.0" text="Peaje: 1" wrappingWidth="50.0" />
+   <Text fx:id="funza_medellin1" layoutX="178.0" layoutY="290.0" text="Peaje: 0" wrappingWidth="50.0" />
+   <Text fx:id="medellin_cali1" layoutX="382.0" layoutY="222.0" text="Peaje: 1" />
+   <Text fx:id="cali_tunja1" layoutX="509.0" layoutY="185.0" text="Peaje: 0" />
+   <Text fx:id="villao_cali1" layoutX="439.0" layoutY="306.0" text="Peaje: 1" />
+   <Text fx:id="funza_villao1" layoutX="253.0" layoutY="362.0" text="Peaje: 1" />
+   <Text fx:id="pereira_villao1" layoutX="320.0" layoutY="190.0" text="Peaje: 3" />
+   <Button fx:id="btnLimpiar" layoutX="700.0" layoutY="303.0" prefWidth="150" text="Limpiar" textFill="WHITE" />
 
 </AnchorPane>

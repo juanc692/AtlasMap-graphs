@@ -18,6 +18,7 @@ public class grafos_controlador {
     @FXML private Button btnDistancia;
     @FXML private Button btnPeajes;
     @FXML private Button btnRuta;
+    @FXML private Button btnLimpiar;
 
     @FXML private Circle bogota;
     @FXML private Circle funza;
@@ -36,6 +37,15 @@ public class grafos_controlador {
     @FXML private Text medellin_cali;
     @FXML private Text funza_medellin;
 
+    @FXML private Text pereira_bogota1;
+    @FXML private Text bogota_funza1;
+    @FXML private Text funza_villao1;
+    @FXML private Text villao_cali1;
+    @FXML private Text cali_tunja1;
+    @FXML private Text pereira_villao1;
+    @FXML private Text medellin_cali1;
+    @FXML private Text funza_medellin1;
+
     @FXML private Line pereira_bogota_line;
     @FXML private Line bogota_funza_line;
     @FXML private Line funza_villao_line;
@@ -46,6 +56,7 @@ public class grafos_controlador {
     @FXML private Line funza_medellin_line;
 
     private Text[] listaKm;
+    private Text[] listaPeaje;
     private Map<Text,Line> lineas;
     private Set<Circle> seleccionados;
     private Map<Circle,String> ciudades;
@@ -119,6 +130,26 @@ public class grafos_controlador {
                 funza_medellin
         };
 
+        pereira_bogota1.setUserData("pereira_bogota");
+        bogota_funza1.setUserData("bogota_funza");
+        funza_villao1.setUserData("funza_villao");
+        villao_cali1.setUserData("villao_cali");
+        cali_tunja1.setUserData("cali_tunja");
+        pereira_villao1.setUserData("pereira_villao");
+        medellin_cali1.setUserData ("medellin_cali");
+        funza_medellin1.setUserData("funza_medellin");
+
+        listaPeaje = new Text[]{
+                pereira_bogota1,
+                bogota_funza1,
+                funza_villao1,
+                villao_cali1,
+                cali_tunja1,
+                pereira_villao1,
+                medellin_cali1,
+                funza_medellin1
+        };
+
         lineas = new HashMap<>();
         lineas.put(pereira_bogota,pereira_bogota_line);
         lineas.put(bogota_funza,bogota_funza_line);
@@ -174,16 +205,54 @@ public class grafos_controlador {
             }
         });
         btnPeajes.setUserData(false);
+        for(Text km : listaPeaje)
+        {
+            km.setVisible(false);
+        }
         btnPeajes.setOnAction(actionEvent -> {
             boolean estado = (boolean) btnPeajes.getUserData();
 
             if (estado) {
                 btnPeajes.setUserData(false);
                 btnPeajes.getStyleClass().remove("peaje");
+                for(Text km : listaPeaje)
+                {
+                    km.setVisible(false);
+                }
             } else {
                 btnPeajes.setUserData(true);
                 btnPeajes.getStyleClass().add("peaje");
+                for(Text km : listaPeaje)
+                {
+                    km.setVisible(true);
+                }
             }
+        });
+
+        btnLimpiar.setOnAction(actionEvent -> {
+
+            if((boolean) btnPeajes.getUserData())
+            {
+                btnPeajes.setUserData(false);
+                btnPeajes.getStyleClass().remove("peaje");
+                for(Text km : listaPeaje)
+                {
+                    km.setVisible(false);
+                }
+            }
+            for(Map.Entry<Text,Line> l : lineas.entrySet())
+            {
+                l.getValue().setStroke(Color.BLUE);
+                l.getKey().setVisible(false);
+            }
+            for(Circle ciudad : Arrays.asList(bogota,funza,medellin,villao,cali,pereira,tunja) )
+            {
+                ciudad.setUserData("no seleccionado");
+                ciudad.setStyle("-fx-stroke: transparent;");
+
+                seleccionados = new LinkedHashSet<>();
+            }
+
         });
 
     }
@@ -193,12 +262,15 @@ public class grafos_controlador {
         Main calculo = new Main(ciudades.get(partida),ciudades.get(destino),(boolean) btnPeajes.getUserData());
         List<String> aristas = calculo.getAristas();
 
-        labelCostoTotal.setText("Costo: "+calculo.getCosto()+"km");
+        labelCostoTotal.setText("Costo: "+calculo.getCosto()+((boolean) btnPeajes.getUserData() ? " peajes" : "km"));
 
         for(Map.Entry<Text,Line> l : lineas.entrySet())
         {
             l.getValue().setStroke(Color.BLUE);
             l.getKey().setVisible(false);
+        }
+        for (Text peaj : listaPeaje) {
+            peaj.setVisible(false);
         }
 
         for (String arista : aristas) {
@@ -213,6 +285,15 @@ public class grafos_controlador {
                 if (setKey.equals(setRuta)) {
                     linea.getValue().setStroke(Color.GREEN);
                     linea.getKey().setVisible(true);
+                    if((boolean) btnPeajes.getUserData()) {
+                        for (Text peaj : listaPeaje) {
+                            if(((String)peaj.getUserData()).equalsIgnoreCase(((String)linea.getKey().getUserData())))
+                            {
+                                peaj.setVisible(true);
+                            }
+                        }
+                    }
+
                 } else {
 //                    linea.getValue().setStroke(Color.BLUE);
                 }
