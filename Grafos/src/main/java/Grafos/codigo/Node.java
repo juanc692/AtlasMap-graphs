@@ -1,9 +1,6 @@
 package Grafos.codigo;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Node {
 
@@ -13,17 +10,17 @@ public class Node {
 
     private Integer distance = Integer.MAX_VALUE;
 
-    Map<Node, Integer> adjacentNodes = new HashMap<>();
+    // Ahora usamos Edge como peso
+    Map<Node, Edge> adjacentNodes = new HashMap<>();
 
-    public void addDestination(Node destination, int distance) {
-        adjacentNodes.put(destination, distance);
+    public void addDestination(Node destination, int distance, int tolls) {
+        adjacentNodes.put(destination, new Edge(distance, tolls));
     }
 
     public Node(String name) {
         this.name = name;
     }
 
-    // getters and setters
     @Override
     public String toString() {
         return this.name;
@@ -31,10 +28,6 @@ public class Node {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public List<Node> getShortestPath() {
@@ -53,11 +46,7 @@ public class Node {
         this.distance = distance;
     }
 
-    public Map<Node, Integer> getAdjacentNodes() {
+    public Map<Node, Edge> getAdjacentNodes() {
         return adjacentNodes;
-    }
-
-    public void setAdjacentNodes(Map<Node, Integer> adjacentNodes) {
-        this.adjacentNodes = adjacentNodes;
     }
 }
