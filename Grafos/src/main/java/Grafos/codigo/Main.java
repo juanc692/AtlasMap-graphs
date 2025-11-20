@@ -5,13 +5,13 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        Node node1 = new Node("1");
-        Node node2 = new Node("2");
-        Node node3 = new Node("3");
-        Node node4 = new Node("4");
-        Node node5 = new Node("5");
-        Node node6 = new Node("6");
-        Node node7 = new Node("7");
+        Node node1 = new Node("Funza");
+        Node node2 = new Node("Medellin");
+        Node node3 = new Node("Villao");
+        Node node4 = new Node("Cali");
+        Node node5 = new Node("Tunja");
+        Node node6 = new Node("Pereira");
+        Node node7 = new Node("Bogota");
 
         node1.addDestination(node2, 20, 0);
         node1.addDestination(node3, 40, 1);
