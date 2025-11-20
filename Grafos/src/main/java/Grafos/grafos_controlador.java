@@ -1,16 +1,24 @@
 package Grafos;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class grafos_controlador {
     @FXML private Button btnDistancia;
     @FXML private Button btnPeajes;
     @FXML private Button btnRuta;
+
+    @FXML private Circle bogota;
+    @FXML private Circle funza;
+    @FXML private Circle medellin;
+    @FXML private Circle cali;
+    @FXML private Circle villao;
+    @FXML private Circle tunja;
+    @FXML private Circle pereira;
 
     @FXML private Text pereira_bogota;
     @FXML private Text bogota_funza;
@@ -32,10 +40,62 @@ public class grafos_controlador {
 
     private Text[] listaKm;
     private Map<Text,Line> lineas;
+    private Set<Circle> seleccionados;
 
     @FXML
     public void initialize()
     {
+        setMapa();
+        ocultarKM();
+        setBotones();
+    }
+
+    private void setMapa()
+    {
+        seleccionados = new LinkedHashSet<>();
+
+        for(Circle ciudad : Arrays.asList(bogota,funza,medellin,villao,cali,pereira,tunja) )
+        {
+            ciudad.setUserData("no seleccionado");
+
+            ciudad.setOnMouseClicked(mouseEvent -> {
+                Circle circle = (Circle) mouseEvent.getSource();
+                String seleccionado = (String) ciudad.getUserData();
+                if (seleccionado.equalsIgnoreCase("no seleccionado"))
+                {
+
+                    ciudad.setUserData("seleccionado");
+                    //añadir estilo /*-fx-stroke: black;*/
+
+                    if (seleccionados.size() == 2) {
+                        Circle primerSeleccionado = seleccionados.iterator().next(); //esto devolvera el primer elemento en el orden
+                        seleccionados.remove(primerSeleccionado);
+                        primerSeleccionado.setStyle("-fx-stroke: transparent;");
+
+                        primerSeleccionado = seleccionados.iterator().next();
+                        primerSeleccionado.setStyle("-fx-stroke: green;");
+                    }
+                    seleccionados.add(ciudad);
+
+                    Circle primerSeleccionado = seleccionados.iterator().next(); //esto devolvera el primer elemento en el orden
+                    if(circle == primerSeleccionado) {
+                        circle.setStyle("-fx-stroke: green;");
+                    }
+                    else {
+                        circle.setStyle("-fx-stroke: red;");
+                    }
+
+                }else{
+                    ciudad.setUserData("no seleccionado");
+                    //eliminar estilo /*-fx-stroke: transparent;*/
+                    circle.setStyle("-fx-stroke: transparent;");
+                    seleccionados.remove(circle);
+                    Circle primerSeleccionado = seleccionados.iterator().next(); //esto devolvera el primer elemento en el orden
+                    primerSeleccionado.setStyle("-fx-stroke: green;");
+                }
+            });
+        }
+
         listaKm = new Text[]{
                 pereira_bogota,
                 bogota_funza,
@@ -46,6 +106,7 @@ public class grafos_controlador {
                 medellin_cali,
                 funza_medellin
         };
+
         lineas = new HashMap<>();
         lineas.put(pereira_bogota,pereira_bogota_line);
         lineas.put(bogota_funza,bogota_funza_line);
@@ -55,9 +116,6 @@ public class grafos_controlador {
         lineas.put(pereira_villao,pereira_villao_line);
         lineas.put(medellin_cali,medellin_cali_line);
         lineas.put(funza_medellin,funza_medellin_line);
-
-        ocultarKM();
-        setBotones();
     }
 
     private void setBotones()

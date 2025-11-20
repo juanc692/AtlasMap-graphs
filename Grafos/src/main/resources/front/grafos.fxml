@@ -37,43 +37,43 @@
     <!-- ======== CIUDADES (NODOS) ======== -->
 
     <Circle fx:id="bogota" fill="#808080" layoutX="135.0" layoutY="169.0" radius="35" styleClass="bogota" />
-    <Text layoutX="115.0" layoutY="173.0" text="Bogotá" underline="true">
+    <Text layoutX="50.0" layoutY="175.0" text="Bogotá" underline="true">
       <font>
          <Font name="System Bold" size="12.0" />
       </font></Text>
 
     <Circle fx:id="funza" fill="#808080" layoutX="168.0" layoutY="350.0" radius="35" styleClass="funza" />
-    <Text layoutX="153.0" layoutY="355.0" text="Funza" underline="true">
+    <Text layoutX="91.0" layoutY="354.0" text="Funza" underline="true">
       <font>
          <Font name="System Bold" size="12.0" />
       </font></Text>
 
     <Circle fx:id="medellin" fill="#808080" layoutX="270.0" layoutY="254.0" radius="35" styleClass="medellin" />
-    <Text layoutX="245.0" layoutY="258.0" text="Medellín" underline="true" wrappingWidth="54.242645263671875">
+    <Text layoutX="240.0" layoutY="214.0" text="Medellín" underline="true" wrappingWidth="54.242645263671875">
       <font>
          <Font name="System Bold" size="12.0" />
       </font></Text>
 
     <Circle fx:id="cali" fill="#808080" layoutX="470.0" layoutY="220.0" radius="35" styleClass="cali" />
-    <Text layoutX="460.0" layoutY="225.0" text="Cali" underline="true">
+    <Text layoutX="509.0" layoutY="224.0" text="Cali" underline="true">
       <font>
          <Font name="System Bold" size="12.0" />
       </font></Text>
 
     <Circle fx:id="tunja" fill="#808080" layoutX="520" layoutY="100" radius="35" styleClass="tunja" />
-    <Text layoutX="505" layoutY="105" text="Tunja" underline="true">
+    <Text layoutX="504.0" layoutY="57.0" text="Tunja" underline="true">
       <font>
          <Font name="System Bold" size="12.0" />
       </font></Text>
 
-    <Circle fx:id="villa" fill="#808080" layoutX="400" layoutY="340" radius="35" styleClass="villao" />
-    <Text layoutX="385.0" layoutY="347.0" text="Villao" underline="true">
+    <Circle fx:id="villao" fill="#808080" layoutX="400" layoutY="340" radius="35" styleClass="villao" />
+    <Text layoutX="443.0" layoutY="349.0" text="Villao" underline="true">
       <font>
          <Font name="System Bold" size="12.0" />
       </font></Text>
 
     <Circle fx:id="pereira" fill="#808080" layoutX="250" layoutY="80" radius="35" styleClass="pereira" />
-    <Text layoutX="230" layoutY="85" text="Pereira" underline="true">
+    <Text layoutX="228.0" layoutY="41.0" text="Pereira" underline="true">
       <font>
          <Font name="System Bold" size="12.0" />
       </font></Text>
