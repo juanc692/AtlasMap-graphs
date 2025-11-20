@@ -1,4 +1,4 @@
-package Grafos;
+package Grafos.codigo;
 
 public class Edge {
     private int distance;

@@ -13,4 +13,6 @@ module examplepack.grafos {
 
     opens Grafos to javafx.fxml;
     exports Grafos;
+    exports Grafos.codigo;
+    opens Grafos.codigo to javafx.fxml;
 }
