@@ -1,4 +1,4 @@
-package Grafos;
+package Grafos.codigo;
 
 import java.util.*;
 

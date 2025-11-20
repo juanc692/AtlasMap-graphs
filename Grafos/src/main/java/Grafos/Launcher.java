@@ -1,4 +1,4 @@
-package examplepack.grafos;
+package Grafos;
 
 import javafx.application.Application;
 
