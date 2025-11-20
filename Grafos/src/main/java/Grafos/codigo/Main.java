@@ -45,12 +45,15 @@ public class Main {
 
         boolean usarDistancia = true;  // true = distancia, false = peajes
 
-        graph = calculateShortestPath(graph, node3, usarDistancia);
+        graph = calculateShortestPath(graph, node2, usarDistancia); //aca se define el nodo de inicio
 
         Node destinoFinal = node6;
 
         System.out.println("Costo total: " + destinoFinal.getDistance());
-        System.out.println("Ruta: " + destinoFinal.getShortestPath());
+
+        System.out.println("Ruta: " + obtenerRuta(destinoFinal));
+
+        System.out.println("Aristas recorridas: " + obtenerAristas(destinoFinal));
     }
 
     private static Node getLowestDistanceNode(Set<Node> unsettledNodes) {
@@ -111,4 +114,36 @@ public class Main {
 
         return graph;
     }
+    private static List<String> obtenerAristas(Node destino) {
+        List<String> edges = new ArrayList<>();
+
+        List<Node> path = destino.getShortestPath();
+        if (path.isEmpty()) return edges;
+
+        Node prev = path.get(0);
+        for (int i = 1; i < path.size(); i++) {
+            Node curr = path.get(i);
+            edges.add("(" + prev.getName() + "," + curr.getName() + ")");
+            prev = curr;
+        }
+
+        // última arista hacia el destino final
+        edges.add("(" + prev.getName() + "," + destino.getName() + ")");
+
+        return edges;
+    }
+
+    private static String obtenerRuta(Node destino) {
+        List<Node> path = destino.getShortestPath();
+        StringBuilder sb = new StringBuilder();
+
+        for (Node n : path) {
+            sb.append(n.getName()).append(" -> ");
+        }
+        sb.append(destino.getName());
+
+        return sb.toString();
+    }
+
 }
+
